@@ -27,7 +27,7 @@ This module allows the user to create a "stock team" with it's own inventory
 loss location. During inventories or transfers this stock location can be used
 to track stock loss/gain by the responsible team.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://www.clearict.com',
     'version': '1.0',
     'category': 'Stock',

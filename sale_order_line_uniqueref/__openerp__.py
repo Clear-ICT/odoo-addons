@@ -26,7 +26,7 @@
     'description': """
 This module assigns each sale order line a unique sequencial reference number.
 """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Sales Management',

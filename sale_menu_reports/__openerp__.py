@@ -27,7 +27,7 @@
 Moves the sales reports usually found in the 'Reporting' top-level menu to
 the 'Sales' top-level menu.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

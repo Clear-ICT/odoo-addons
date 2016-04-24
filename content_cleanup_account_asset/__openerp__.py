@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - Account Asset',
     'summary': 'Remove asset accounting related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions,Odoo Community Association (OCA)",
+    'author': "Clear ICT Solutions",
     'depends': [
         'account_asset',
         'content_cleanup',

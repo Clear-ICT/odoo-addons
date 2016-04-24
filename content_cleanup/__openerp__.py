@@ -24,7 +24,7 @@
     'name': 'Database content cleanup',
     'summary': 'Remove database content',
     'version': '8.0',
-    'author': "Therp BV,Odoo Community Association (OCA), Clear ICT Solutions",
+    'author': "Clear ICT Solutions, Therp BV",
     'depends': ['base'],
     'license': 'AGPL-3',
     'category': 'Tools',

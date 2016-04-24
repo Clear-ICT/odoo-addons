@@ -29,7 +29,7 @@ This module adds the following fields to a Sale Order
     * Next Action
     * Next Action Date
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

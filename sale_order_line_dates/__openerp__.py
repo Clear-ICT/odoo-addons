@@ -31,7 +31,7 @@ Additional date information on sale order line items
     * Commitment Date (computed, read-only)
     * Shipped Date (date of last shipment)
 """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Sales Management',

@@ -27,7 +27,7 @@
 This module constrains the sale order line quantity to never be less than or
 equal to zero.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales Management',
     'version': '1.0',

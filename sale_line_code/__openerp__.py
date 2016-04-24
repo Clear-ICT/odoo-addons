@@ -29,7 +29,7 @@ Sales Order Line Reference Codes
     * Internal Company Reference Number
     * Customer Reference Number
     """,
-    'author':'Clear ICT Solutions <info@clearict.com>',
+    'author':'Clear ICT Solutions',
     'website':'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

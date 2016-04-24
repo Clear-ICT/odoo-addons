@@ -27,7 +27,7 @@
 This module allows the salesperson to select a contact from the customer on
 a sale order.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - Purchases',
     'summary': 'Remove all purchase related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions,Odoo Community Association (OCA)",
+    'author': "Clear ICT Solutions",
     'depends': [
         'content_cleanup',
         'purchase',

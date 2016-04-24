@@ -28,7 +28,7 @@ Create New Sales Order from Quotation Line
 This module adds a new field to a Sale Order Line to create a new Sale Order
 from the line.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

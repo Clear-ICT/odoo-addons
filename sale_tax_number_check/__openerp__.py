@@ -26,7 +26,7 @@
 This modules checks that when a Sale Order is created the customer has
 a Tax ID Number.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

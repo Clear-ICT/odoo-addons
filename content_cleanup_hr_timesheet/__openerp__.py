@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - HR Time Sheet',
     'summary': 'Remove HR time sheet related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions,Odoo Community Association (OCA)",
+    'author': "Clear ICT Solutions",
     'depends': [
         'content_cleanup',
         'hr_timesheet',

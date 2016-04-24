@@ -26,7 +26,7 @@
     'description': """
 The priority of a sale order is inherited from the customer's priority.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

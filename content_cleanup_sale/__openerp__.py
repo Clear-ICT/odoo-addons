@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - Sales',
     'summary': 'Remove all sales related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions,Odoo Community Association (OCA)",
+    'author': "Clear ICT Solutions",
     'depends': [
         'content_cleanup',
         'sale',

@@ -29,7 +29,7 @@ Change the following dates on sale order lines
 
     * Requested Date
 """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Sales Management',

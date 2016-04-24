@@ -31,7 +31,7 @@ To use it:
     2. Create a sequence record for every partner/product combination you want to track
     3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner_product(partner_id, product_id, sequence_type_code) 
     """,
-    "author": "Clear ICT Solutions <info@clearict.com>",
+    "author": "Clear ICT Solutions",
     "website": "http://clearict.com",
     "category": "Generic Modules/Base",
     "version": "1.1",

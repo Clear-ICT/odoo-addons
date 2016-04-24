@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - Stock',
     'summary': 'Remove all stock movement related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions,Odoo Community Association (OCA)",
+    'author': "Clear ICT Solutions",
     'depends': [
         'content_cleanup',
         'stock',

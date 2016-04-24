@@ -26,7 +26,7 @@
     'description': """
 This module contains data required by the sale_order_line_uniqueref module.
 """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Hidden',

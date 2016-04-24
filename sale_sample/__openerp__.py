@@ -26,7 +26,7 @@
 Create Sample Orders from a Sales Order
 =======================================
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',
