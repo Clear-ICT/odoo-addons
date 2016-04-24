@@ -33,7 +33,7 @@ To use it:
        types you will create N sequences every time a new partner is created.
     3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner(partner_id, sequence_type_code) 
     """,
-    "author": "Clear ICT Solutions <info@clearict.com>",
+    "author": "Clear ICT Solutions",
     "website": "http://clearict.com",
     "category": "Generic Modules/Base",
     "version": "1.1",
