@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherit.priority</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="priority"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.priority</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="before">
+                    <label for="priority"/>
+                    <field name="priority"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_kanban_view" model="ir.ui.view">
+            <field name="name">res.partner.kanban.inherit.priority</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_kanban_partner_categories']" position="before">
+                    <t t-if="record.is_company.raw_value === true">
+                        <div name="priority">
+                            <field name="priority" widget="priority" readonly="1"/>
+                        </div>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

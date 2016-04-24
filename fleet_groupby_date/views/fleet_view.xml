@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<!-- Odometer -->
+		
+        <record id='fleet_vehicle_odometer_search' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.odometer.search</field>
+            <field name="model">fleet.vehicle.odometer</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_search"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//filter[@name='groupby_vehicle']" position="after">
+                	<filter name="groupby_year" context="{'group_by': 'date:year'}" string="Year"/>
+                	<filter name="groupby_month" context="{'group_by': 'date:month'}" string="Month"/>
+                	<filter name="groupby_week" context="{'group_by': 'date:week'}" string="Week"/>
+            	</xpath>
+            </field>
+        </record>
+		
+		
+		<!-- Fuel Log -->
+		
+        <record id='fleet_vehicle_log_fuel_search' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.log.fuel.search</field>
+            <field name="model">fleet.vehicle.log.fuel</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_log_fuel_search"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//filter[@name='groupby_vehicle']" position="after">
+                	<filter name="groupby_year" context="{'group_by': 'date:year'}" string="Year"/>
+                	<filter name="groupby_month" context="{'group_by': 'date:month'}" string="Month"/>
+                	<filter name="groupby_week" context="{'group_by': 'date:week'}" string="Week"/>
+            	</xpath>
+            </field>
+        </record>
+		
+	</data>
+</openerp>

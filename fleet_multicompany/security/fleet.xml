@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="1">
+
+        <record id="fleet_vehicle_contract_comp_rule" model="ir.rule">
+            <field name="name">Vehicle contract multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_contract"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+        <record id="fleet_vehicle_cost_comp_rule" model="ir.rule">
+            <field name="name">Vehicle costs multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_cost"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+        <record id="fleet_vehicle_services_comp_rule" model="ir.rule">
+            <field name="name">Vehicle service multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_services"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+        <record id="fleet_vehicle_odometer_comp_rule" model="ir.rule">
+            <field name="name">Vehicle odometer multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_odometer"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+        <record id="fleet_vehicle_fuel_comp_rule" model="ir.rule">
+            <field name="name">Vehicle fuel log multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_fuel"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+        <record id="fleet_vehicle_comp_rule" model="ir.rule">
+            <field name="name">Vehicle multi company rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+    </data>
+</openerp>

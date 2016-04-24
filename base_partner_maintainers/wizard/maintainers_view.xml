@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record id="view_partner_maintainers_wizard" model="ir.ui.view">
+            <field name="name">Partner Maintainers Wizard</field>
+            <field name="model">res.partner.maintainers.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Partner Maintainers Wizard" version="7.0">
+                    <header>
+                        <button name="save_maintainers" type="object" string="Save" class="oe_highlight"/>
+                    </header>
+                    <group string="Maintainers">
+                        <field name="user_ids" nolabel="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="open_partner_maintainers_wizard" model="ir.actions.act_window">
+            <field name="name">Manage Contact Maintainers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.maintainers.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="menu_partner_maintainers_wizard"
+            action="open_partner_maintainers_wizard"
+            parent="base.menu_base_config"
+            groups="base.group_sale_manager"
+            sequence="1"/>
+    
+    </data>
+</openerp>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id='fleet_vehicle_form' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='driver_id']" position="after">
+                    <field name="department"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id='fleet_vehicle_tree' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='model_id']" position="after">
+                    <field name="department"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fleet_vehicle_search" model="ir.ui.view">
+            <field name="name">fleet.vehicle.search</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='groupby_model']" position="after">
+                    <filter name="groupby_department" context="{'group_by' : 'department'}" string="Department"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

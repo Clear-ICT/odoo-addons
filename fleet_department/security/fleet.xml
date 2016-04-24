@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Create new type of user group: departmental manager -->
+
+        <record id="fleet.group_fleet_department" model="res.groups">
+            <field name="name">Departmental Manager</field>
+            <field name="implied_ids" eval="[(4, ref('fleet.group_fleet_user'))]"/>
+            <field name="category_id" ref="fleet.module_fleet_category"/>
+        </record>
+
+        <record id="fleet_contract_department_rule" model="ir.rule">
+            <field name="name">Vehicle contract department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_contract"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('cost_id.vehicle_id.department', '=', False), ('vehicle_id.department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+        <record id="fleet_cost_department_rule" model="ir.rule">
+            <field name="name">Vehicle cost department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_cost"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('vehicle_id.department', '=', False), ('vehicle_id.department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+        <record id="fleet_service_department_rule" model="ir.rule">
+            <field name="name">Vehicle service department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_services"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('vehicle_id.department', '=', False), ('vehicle_id.department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+        <record id="fleet_odometer_department_rule" model="ir.rule">
+            <field name="name">Vehicle odometer department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_odometer"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('vehicle_id.department', '=', False), ('vehicle_id.department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+        <record id="fleet_fuel_department_rule" model="ir.rule">
+            <field name="name">Vehicle fuel log department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle_log_fuel"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('vehicle_id.department', '=', False), ('vehicle_id.department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+        <record id="fleet_vehicle_department_rule" model="ir.rule">
+            <field name="name">Vehicle department rule</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field name="groups" eval="[(4, ref('fleet.group_fleet_department')), (4, ref('fleet.group_fleet_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="domain_force">['|', ('department', '=', False), ('department.id','in',[ee.department_id.id for ee in user.employee_ids])]</field>
+        </record>
+
+    </data>
+</openerp>
