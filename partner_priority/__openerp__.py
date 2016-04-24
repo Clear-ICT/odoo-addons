@@ -27,7 +27,7 @@ This module adds a 'priority' field to partner records. The priority applies
 only to companies. Partner contacts inherit the priority of the parent
 company.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://www.clearict.com',
     'version': '1.0',
     'category': 'Base',

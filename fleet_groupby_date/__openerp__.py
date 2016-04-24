@@ -26,7 +26,7 @@
 Group Fuel Log Entries by Date
 ==============================
     """,
-    'author':'Clear ICT Solutions <info@clearict.com>',
+    'author':'Clear ICT Solutions',
     'website':'http://clearict.com',
     'version': '1.0',
     'category': 'Generic Modules',

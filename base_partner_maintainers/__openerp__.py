@@ -27,7 +27,7 @@ Centrally manage who can maintain partners and contacts
 =======================================================
 Give specific users permission to add, remove, and update contact information.
     """,
-    'author':'Clear ICT Solutions <info@clearict.com>',
+    'author':'Clear ICT Solutions',
     'website':'http://clearict.com',
     'category': 'Generic Modules/Base',
     'version': '1.0',

@@ -35,7 +35,7 @@ Hide the following fields:
     * CO2 emissions
     * Horsepower Taxation
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://www.clearict.com',
     'version': '1.0',
     'category': 'Managing vehicles and contracts',

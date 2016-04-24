@@ -27,7 +27,7 @@ Fleet - Vehicle Engine Number
 =============================
 This module adds a new field, Engine Number, to a fleet vehicle.
     """,
-    'author': 'Clear ICT Solutions <info@clearict.com>',
+    'author': 'Clear ICT Solutions',
     'website': 'http://www.clearict.com',
     'version': '1.0',
     'category': 'Managing vehicles and contracts',
