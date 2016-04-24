@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="sol_change_dates_wizard" model="ir.ui.view">
+            <field name="name">Change Sale Order Line Dates</field>
+            <field name="model">sale.order.line.wizard.change.date</field>
+            <field name="arch" type="xml">
+                <form string="Change Order Line Dates">
+                    <group>
+                        <group>
+                            <field name="order_line" invisible="1"/>
+                            <field name="requested_date"/>
+                        </group>
+                    </group>
+                    <group name="footer">
+                        <button name="do_change" type="object" string="Update" class="oe_highlight"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_sol_change_dates_wizard" model="ir.actions.act_window">
+            <field name="name">Change Sale Order Line Dates</field>
+            <field name="res_model">sale.order.line.wizard.change.date</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sol_change_dates_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

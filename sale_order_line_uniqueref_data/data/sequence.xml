@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+
+        <!-- Sale Order Line -->
+
+        <record id="seq_type_sale_order_line" model="ir.sequence.type">
+            <field name="name">Sale Order Line Unique</field>
+            <field name="code">sale.order.line.unique.ref</field>
+        </record>
+
+        <record id="seq_sale_order_line_uniqueref" model="ir.sequence">
+            <field name="name">Sale Order Line Unique Reference</field>
+            <field name="code">sale.order.line.unique.ref</field>
+            <field name="prefix">#</field>
+            <field name="padding">0</field>
+            <field name="company_id"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--
+            Move sales reporing to the sales navigation menu.
+        -->
+        <menuitem id="base.next_id_64"
+            name="Reporting"
+            parent="base.menu_base_partner"
+            sequence="7"
+            groups="base.group_sale_manager"/>
+
+    </data>
+</openerp>

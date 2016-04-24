@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.sale_order_line_dates</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/form//field[@name='th_weight']" position="before">
+                    <field name="requested_date"/>
+                    <field name="commitment_date"/>
+                    <field name="shipped_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_line_tree" model="ir.ui.view">
+            <field name="name">sale.order.line.tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="requested_date"/>
+                    <field name="shipped_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_line_form2" model="ir.ui.view">
+            <field name="name">sale.order.line.form2</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group" position="inside">
+                    <field name="requested_date"/>
+                    <field name="commitment_date"/>
+                    <field name="shipped_date"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

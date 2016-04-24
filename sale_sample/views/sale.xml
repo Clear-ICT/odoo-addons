@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_sample_tree" model="ir.ui.view">
+            <field name="name">sale.order.sample.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">8</field>
+            <field name="arch" type="xml">
+                <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name" string="Order Number"/>
+                        <field name="parent_id" operator="child_of"/>
+                    <field name="parent_id" string="Parent Order"/>
+                    <field name="date_order"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="amount_total" sum="Total Tax Included"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sample_order_filter" model="ir.ui.view">
+            <field name="name">sale.order.sample.search</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Sample Sales Order">
+                    <field name="name" string="Sales Order" filter_domain="['|',('name','ilike',self),('client_order_ref','ilike',self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id"/>
+                    <field name="section_id" string="Sales Team" groups="base.group_multi_salesteams"/>
+                    <field name="project_id"/>
+                    <field name="product_id"/>
+                    <filter string="My" domain="[('user_id','=',uid)]" name="my_sale_orders_filter"/>
+                    <separator/>
+                    <filter string="Quotations" name="draft" domain="[('state','in',('draft','sent'))]" help="Sales Order that haven't yet been confirmed"/>
+                    <filter string="Sales" name="sales" domain="[('state','in',('manual','progress'))]"/>
+                    <filter string="To Invoice" domain="[('state','=','manual')]" help="Sales Order ready to be invoiced"/>
+                    <filter string="Done" domain="[('state','=','done')]" help="Sales Order done"/>
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Salesperson" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Order Month" domain="[]" context="{'group_by':'date_order'}"/>
+                        <filter string="Parent Order" domain="[('is_sample', '=', True)]" context="{'group_by':'parent_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="action_sample_orders" model="ir.actions.act_window">
+            <field name="name">Sample Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_sample_tree"/>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="context">{'search_default_my_sale_orders_filter': 1}</field>
+            <field name="domain">[('is_sample', '=', True)]</field>
+            <field name="search_view_id" ref="view_sample_order_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a sample order.
+              </p><p>
+                Odoo will help you handle efficiently the complete sample flow:
+                from the quotation to the sales order, the
+                delivery, the invoicing and the payment collection.
+              </p><p>
+                The social feature helps you organize discussions on each sample
+                order, and allow your customers to keep track of the evolution
+                of the sample order.
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="action_sample_orders"
+                  id="menu_sample_order"
+                  parent="base.menu_sales"
+                  sequence="12"
+                  groups="base.group_sale_salesman,base.group_sale_manager"/>
+
+
+        <!-- Modify existing actions and views -->
+
+        <record id="view_sales_order_filter" model="ir.ui.view">
+            <field name="name">sale.order.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//filter[@name='sales']" position="after">
+                        <filter string="Sales Orders" name="no_sample_filter" domain="[('is_sample', '=', False)]"/>
+                        <filter string="Sample Orders" name="sample_filter" domain="[('is_sample', '=', True)]"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="context">{
+                    'search_default_my_sale_orders_filter': 1,
+                    'search_default_no_sample_filter': 1,
+                }
+            </field>
+        </record>
+
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="context">{
+                    'search_default_my_sale_orders_filter': 1,
+                    'search_default_no_sample_filter': 1,
+                }
+            </field>
+        </record>
+
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='currency_id']" position="after">
+                        <field name="parent_id" readonly="1" attrs="{'invisible': [('is_sample', '=', False)]}"/>
+                        <field name="is_sample" invisible="1"/>
+                    </xpath>
+
+                    <xpath expr="//page[@string='Other Information']" position="after">
+                        <page name="sample_orders" string="Sample Orders" attrs="{'invisible': [('is_sample', '=', True)]}">
+                            <button name="%(action_sample_order_wizard)d" type="action" string="Create"/>
+                            <group>
+                                <field name="sample_ids" nolabel="1"/>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_sample_order_wizard" model="ir.ui.view">
+            <field name="name">Sample Order Wizard</field>
+            <field name="model">sale.order.sample.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sample Order Wizard">
+                    <header>
+                        <button name="create_order" type="object" string="Create Sample Order" class="oe_highlight"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="order"/>
+                            <field name="order_date"/>
+                        </group>
+                    </group>
+                    <group string="Order Lines">
+                        <group>
+                            <field name="wizard_lines" nolabel="1">
+                                <tree string="Wizard Subtree" editable="bottom">
+                                    <field name="product"/>
+                                    <field name="qty"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group></group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_sample_order_wizard" model="ir.actions.act_window">
+            <field name="name">Sample Sales Order Wizard</field>
+            <field name="res_model">sale.order.sample.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sample_order_wizard"/>
+            <field name="target">new</field>
+        </record>
+        
+    </data>
+</openerp>

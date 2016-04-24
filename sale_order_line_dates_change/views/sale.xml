@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.sale_order_line_dates_change</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_order_line_dates.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='requested_date']" position="replace">
+                    <label for="requested_date"/>
+                    <div>
+                        <field name="requested_date" class="oe_inline"/>
+                        <button name="%(action_sol_change_dates_wizard)d" type="action" string="Update" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_line_form2" model="ir.ui.view">
+            <field name="name">sale.order.line.form2.sale_order_line_dates_change</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale_order_line_dates.view_order_line_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='requested_date']" position="replace">
+                    <label for="requested_date"/>
+                    <div>
+                        <field name="requested_date" class="oe_inline"/>
+                        <button name="%(action_sol_change_dates_wizard)d" type="action" string="Update" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
