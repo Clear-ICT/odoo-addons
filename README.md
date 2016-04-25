@@ -7,7 +7,13 @@ Odoo-addons
 Additional modules for Odoo published by Clear ICT Solutions.
 
 [//]: # (addons)
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[currency_denomination](currency_denomination/) | 1.0 | Currency Denominations
+[ir_sequence_by_partner](ir_sequence_by_partner/) | 1.1 | Implements sequence numbers per partner
+
 [//]: # (end addons)
 
 Translation Status
