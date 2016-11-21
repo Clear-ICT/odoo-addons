@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #       @author: Michael Telahun Makonnen <miket@clearict.com>
 #
@@ -27,7 +27,7 @@
 This module constrains the sale order line quantity to never be less than or
 equal to zero.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'category': 'Sales Management',
     'version': '1.0',

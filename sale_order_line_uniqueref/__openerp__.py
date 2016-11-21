@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@
     'description': """
 This module assigns each sale order line a unique sequencial reference number.
 """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Sales Management',

@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@ Centrally manage who can maintain partners and contacts
 =======================================================
 Give specific users permission to add, remove, and update contact information.
     """,
-    'author':'Clear ICT Solutions',
+    'author':'Sucros Clear Information Technologies PLC',
     'website':'http://clearict.com',
     'category': 'Generic Modules/Base',
     'version': '1.0',

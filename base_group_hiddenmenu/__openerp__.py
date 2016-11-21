@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #       @author: Michael Telahun Makonnen <miket@clearict.com>
 #
@@ -28,7 +28,7 @@ To hide menu items from users assign the menu to the "Hidden Menu" group. No
 users should be assigned to this group (unless you want them to see hidden
 menus.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'category': 'Base',
     'version': '1.0',

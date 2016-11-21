@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@
 Group Fuel Log Entries by Date
 ==============================
     """,
-    'author':'Clear ICT Solutions',
+    'author':'Sucros Clear Information Technologies PLC',
     'website':'http://clearict.com',
     'version': '1.0',
     'category': 'Generic Modules',

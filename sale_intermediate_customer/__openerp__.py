@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #       @author: Michael Telahun Makonnen <miket@clearict.com>
 #
@@ -28,7 +28,7 @@ This module allows the salesperson to select intermediate customer to whom the
 ordered products are shipped. The customer for whom this is done is now called
 the 'Final Customer'.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'category': 'Sales Management',
     'version': '1.0',

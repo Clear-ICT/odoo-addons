@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ To use it:
        types you will create N sequences every time a new partner is created.
     3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner(partner_id, sequence_type_code) 
     """,
-    "author": "Clear ICT Solutions",
+    "author": "Sucros Clear Information Technologies PLC",
     "website": "http://clearict.com",
     "category": "Generic Modules/Base",
     "version": "1.1",

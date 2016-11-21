@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify it
@@ -28,7 +28,7 @@ Create New Sales Order from Quotation Line
 This module adds a new field to a Sale Order Line to create a new Sale Order
 from the line.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

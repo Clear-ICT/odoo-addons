@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify it
@@ -29,7 +29,7 @@ This module allows the assignment of a vehicle to a department. For vehicles
 that have been assigned to a department only a Manager who has an employee
 record linked to that department can manage it.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://www.clearict.com',
     'version': '1.0',
     'category': 'Managing vehicles and contracts',

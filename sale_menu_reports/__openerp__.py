@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
+#    Copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
 #       @author: Michael Telahun Makonnen <miket@clearict.com>
 #
@@ -27,7 +27,7 @@
 Moves the sales reports usually found in the 'Reporting' top-level menu to
 the 'Sales' top-level menu.
     """,
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',

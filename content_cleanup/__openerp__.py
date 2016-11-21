@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2016 Clear ICT Solutions (<info@clearict.com>).
+#    This module copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #    This module copyright (C) 2014 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
     'name': 'Database content cleanup',
     'summary': 'Remove database content',
     'version': '8.0',
-    'author': "Clear ICT Solutions, Therp BV",
+    'author': "Sucros Clear Information Technologies PLC, Therp BV",
     'depends': ['base'],
     'license': 'AGPL-3',
     'category': 'Tools',

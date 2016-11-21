@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2016 Clear ICT Solutions (<info@clearict.com>).
+#    This module copyright (C) 2016 Sucros Clear Information Technologies PLC.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,7 +23,7 @@
     'name': 'Database content cleanup - Account Asset',
     'summary': 'Remove asset accounting related content from the database',
     'version': '8.0',
-    'author': "Clear ICT Solutions",
+    'author': "Sucros Clear Information Technologies PLC",
     'depends': [
         'account_asset',
         'content_cleanup',

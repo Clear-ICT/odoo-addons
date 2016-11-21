@@ -22,7 +22,7 @@
 {
     'name': 'Currency Denominations',
     'category': 'Finance',
-    'author': 'Clear ICT Solutions',
+    'author': 'Sucros Clear Information Technologies PLC',
     'website':'http://www.clearict.com',
     'version': '1.0',
     'description': """
