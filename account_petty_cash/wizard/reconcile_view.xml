@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="reconcile_pettycash_fund_form" model="ir.ui.view">
+            <field name="name">Reconcile Petty Cash Fund</field>
+            <field name="model">account.pettycash.fund.reconcile</field>
+            <field name="arch" type="xml">
+                <form string="Reconcile Petty Cash Fund">
+                    <group>
+                        <group>
+                            <field name="fund" readonly="1"/>
+                            <field name="date"/>
+                            <field name="payable_account" string="Accounts Payable"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group name="lines" string="Vouchers">
+                        <field name="vouchers" nolabel="1">
+                            <tree string="Reconcile Petty Cash Voucher Lines">
+                                <field name="state" invisible="1"/>
+                                <field name="date"/>
+                                <field name="amount"/>
+                                <field name="number"/>
+                                <field name="partner_id"/>
+                                <field name="name"/>
+                                <button name="button_cancel_voucher"
+                                    type="object"
+                                    icon="gtk-cancel"
+                                    help="Cancel this voucher" />
+                            </tree>
+                        </field>
+                    </group>
+                    <button name="reconcile_vouchers" type="object" string="Reconcile" class="oe_highlight"/>
+                    <button name="cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="reconcile_pettycash_fund" model="ir.actions.act_window">
+            <field name="name">Reconcile Petty Cash Fund</field>
+            <field name="res_model">account.pettycash.fund.reconcile</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+    </data>
+</openerp>

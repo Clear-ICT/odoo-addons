@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="account.group_pettycash_custodian" model="res.groups">
+            <field name="name">Petty Cash Fund Custodian</field>
+            <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        </record>
+
+        <record id="multi_comp_rule" model="ir.rule">
+            <field name="name">Petty Cash fund multi-company</field>
+            <field name="model_id" ref="model_account_pettycash_fund"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company','=',False),('company','child_of',[user.company_id.id])]</field>
+        </record>
+
+        <record id="fund_owner_rule" model="ir.rule">
+            <field name="name">Petty Cash fund custodian sees own only</field>
+            <field name="model_id" ref="model_account_pettycash_fund"/>
+            <field name="global" eval="False"/>
+            <field name="groups" eval="[(4, ref('account.group_pettycash_custodian'))]"/>
+            <field name="domain_force">[('custodian.id','=',[user.id])]</field>
+        </record>
+
+        <record id="fund_owner_voucher_rule" model="ir.rule">
+            <field name="name">Petty Cash fund custodian sees own vouchers only</field>
+            <field name="model_id" ref="account_voucher.model_account_voucher"/>
+            <field name="global" eval="False"/>
+            <field name="groups" eval="[(4, ref('account.group_pettycash_custodian'))]"/>
+            <field name="domain_force">['&amp;', ('petty_cash_fund', '!=', False), ('petty_cash_fund.custodian.id','=',[user.id])]</field>
+        </record>
+
+        <record id="fund_owner_voucher_line_rule" model="ir.rule">
+            <field name="name">Petty Cash fund custodian sees own voucher lines only</field>
+            <field name="model_id" ref="account_voucher.model_account_voucher_line"/>
+            <field name="global" eval="False"/>
+            <field name="groups" eval="[(4, ref('account.group_pettycash_custodian'))]"/>
+            <field name="domain_force">['&amp;', ('voucher_id.petty_cash_fund', '!=', False), ('voucher_id.petty_cash_fund.custodian.id','=',[user.id])]</field>
+        </record>
+
+    </data>
+</openerp>

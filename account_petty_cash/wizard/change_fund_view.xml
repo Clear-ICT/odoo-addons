@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="change_pettycash_fund_form" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Change Wizard</field>
+            <field name="model">account.pettycash.fund.change</field>
+            <field name="arch" type="xml">
+                <form string="Change Petty Cash Fund">
+                    <group>
+                        <group>
+                            <field name="fund" readonly="1"/>
+                            <field name="fund_name"/>
+                            <field name="custodian"/>
+                            <field name="fund_amount" widget="monetary" readonly="1"/>
+                            <field name="new_amount" widget="monetary"/>
+                            <field name="effective_date"/>
+                        </group>
+                        <group>
+                            <field name="do_receivable" invisible="1"/>
+                            <field name="payable_account"
+                                attrs="{'invisible': [('do_receivable', '=', True)], 'required': [('do_receivable', '=', False)]}"/>
+                            <field name="receivable_account"
+                                attrs="{'invisible': [('do_receivable', '=', False)], 'required': [('do_receivable', '=', True)]}"/>
+                        </group>
+                    </group>
+                    <button name="change_fund" type="object" string="Update" class="oe_highlight"/>
+                    <button name="cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="change_petty_cash_fund" model="ir.actions.act_window">
+            <field name="name">Change Petty Cash Fund</field>
+            <field name="res_model">account.pettycash.fund.change</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+    </data>
+</openerp>

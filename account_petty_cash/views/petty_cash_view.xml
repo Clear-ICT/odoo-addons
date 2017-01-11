@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="petty_cash_fund_search" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Search</field>
+            <field name="model">account.pettycash.fund</field>
+            <field name="arch" type="xml">
+                <search string="Search Petty Cash Fund">
+                    <field name="name"/>
+                    <field name="custodian"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter name="group_custodian" string="Custodian" domain="[]" context="{'group_by':'custodian'}"/>
+                        <filter name="group_amount" string="Fund Amount" domain="[]" context="{'group_by':'amount'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="petty_cash_fund_tree" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Tree View</field>
+            <field name="model">account.pettycash.fund</field>
+            <field name="arch" type="xml">
+                <tree string="Petty Cash Funds" create="0">
+                    <field name="name"/>
+                    <field name="custodian"/>
+                    <field name="amount"/>
+                    <field name="balance"/>
+                    <field name="state"/>
+                    <field name="company" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="petty_cash_fund_form" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Form View</field>
+            <field name="model">account.pettycash.fund</field>
+            <field name="arch" type="xml">
+                <form string="Petty Cash Fund" create="0">
+                    <header>
+                        <button name="%(reconcile_pettycash_fund)d" type="action"
+                            string="Reconcile" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                            groups="account.group_account_user"/>
+                        <button name="%(change_petty_cash_fund)d" type="action"
+                            string="Modify"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                            groups="account.group_account_manager"/>
+                        <button name="%(close_petty_cash_fund)d" type="action"
+                            string="Close"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                            groups="account.group_account_manager"/>
+                        <button name="%(reopen_petty_cash_fund)d" type="action"
+                            string="Re-open"
+                            attrs="{'invisible': [('state', '!=', 'closed')]}"
+                            groups="account.group_account_manager"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <group>
+	                        <field name="name"/>
+	                        <field name="custodian"/>
+	                        <field name="amount" widget="monetary"/>
+                        </group>
+                        <group>
+                            <field name="balance" widget="monetary"/>
+                            <field name="company" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="Vouchers" string="Vouchers">
+                            <group name="vouchers" string="Vouchers">
+                                <button name="%(create_pettycash_voucher)d" type="action"
+                                    string="Create Voucher" class="oe_highlight"
+                                    attrs="{'invisible': [('state', '!=', 'open')]}"
+                                    groups="account.group_pettycash_custodian,account.group_account_user"/>
+                                <newline/>
+                                <field name="vouchers" nolabel="1" options="{'reload_on_button': True}">
+                                    <tree string="Petty Cash Form Vouchers Tree">
+                                        <field name="id" invisible="1"/>
+                                        <field name="state" invisible="1"/>
+                                        <field name="date"/>
+                                        <field name="amount"/>
+                                        <field name="number"/>
+                                        <field name="partner_id"/>
+                                        <field name="name"/>
+                                        <button name="button_cancel_voucher"
+                                            type="object"
+                                            icon="gtk-cancel"
+                                            help="Cancel this voucher" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page name="History" string="History">
+                            <group name="vouchers_history" string="Vouchers">
+                                <field name="vouchers_history" nolabel="1">
+                                    <tree string="Petty Cash Form Vouchers History Tree">
+                                        <field name="state" invisible="1"/>
+                                        <field name="date"/>
+                                        <field name="amount"/>
+                                        <field name="number"/>
+                                        <field name="partner_id"/>
+                                        <field name="name"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page name="journals" string="Journal Entries" groups="account.group_account_user">
+                            <group name="journal_entries" string="Journal Entries">
+                                <field name="journal_entries" nolabel="1">
+                                    <tree string="Petty Cash Form Journal Entries Tree">
+                                        <field name="state" invisible="1"/>
+                                        <field name="name"/>
+                                        <field name="ref"/>
+                                        <field name="partner_id"/>
+                                        <field name="date"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_petty_cash_fund" model="ir.actions.act_window">
+            <field name="name">Petty Cash Funds</field>
+            <field name="res_model">account.pettycash.fund</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="petty_cash_fund_search"/>
+        </record>
+        <menuitem id="menu_finance_petty_cash_fund"
+            action="open_petty_cash_fund"
+            parent="account.menu_finance_bank_and_cash"
+            groups="account.group_account_user"
+            sequence="5"/>
+
+
+        <!-- Provide a root menu for the custodian to use -->
+
+        <!-- Top menu item -->
+        <menuitem id="menu_pettycash_root"
+            name="Petty Cash"
+            groups="account.group_pettycash_custodian"
+            sequence="50"/>
+
+        <menuitem id="menu_petty_cash_custodian"
+            name="Petty Cash Funds"
+            parent="menu_pettycash_root"
+            sequence="10"/>
+
+        <menuitem id="menu_custodian_petty_cash_fund"
+            action="open_petty_cash_fund"
+            parent="menu_petty_cash_custodian"
+            groups="account.group_pettycash_custodian"
+            sequence="5"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="reopen_pettycash_fund_form" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Re-open Wizard</field>
+            <field name="model">account.pettycash.fund.reopen</field>
+            <field name="arch" type="xml">
+                <form string="Re-open Petty Cash Fund">
+                    <group>
+                        <group>
+                            <field name="fund" readonly="1"/>
+                            <field name="fund_amount" widget="monetary"/>
+                            <field name="custodian"/>
+                        </group>
+                        <group>
+                            <field name="payable_account"/>
+                            <field name="effective_date"/>
+                        </group>
+                    </group>
+                    <button name="reopen_fund" type="object" string="Open" class="oe_highlight"/>
+                    <button name="cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="reopen_petty_cash_fund" model="ir.actions.act_window">
+            <field name="name">Re-open Petty Cash Fund</field>
+            <field name="res_model">account.pettycash.fund.reopen</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+    </data>
+</openerp>

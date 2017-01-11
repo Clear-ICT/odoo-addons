@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="create_pettycash_fund" model="ir.ui.view">
+            <field name="name">Petty Cash Fund Creation Wizard</field>
+            <field name="model">account.pettycash.fund.create</field>
+            <field name="arch" type="xml">
+                <form string="Create Petty Cash Fund">
+                    <group>
+                        <group>
+                            <field name="fund_name"/>
+                            <field name="fund_code"/>
+                            <field name="fund_amount" widget="monetary"/>
+                            <field name="custodian"/>
+                            <field name="account"/>
+                        </group>
+                        <group>
+                            <field name="payable_account"/>
+                            <field name="effective_date"/>
+                        </group>
+                    </group>
+                    <button name="initialize_fund" type="object" string="Setup" class="oe_highlight"/>
+                    <button name="cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Put the petty fund creation wizard in the configuration section -->
+        <record id="create_petty_cash_fund" model="ir.actions.act_window">
+            <field name="name">Create Petty Cash Fund</field>
+            <field name="res_model">account.pettycash.fund.create</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="menu_create_petty_cash_fund"
+            action="create_petty_cash_fund"
+            parent="account.menu_configuration_misc"
+            groups="account.group_account_manager"
+            sequence="50"/>
+        
+
+    </data>
+</openerp>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="issue_pettycash_vouchher_form" model="ir.ui.view">
+            <field name="name">Issue Petty Cash Voucher</field>
+            <field name="model">account.pettycash.fund.voucher</field>
+            <field name="arch" type="xml">
+                <form string="Issue Petty Cash Voucher">
+                    <group>
+                        <group>
+                            <field name="fund" readonly="1"/>
+                            <field name="partner"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group name="lines" string="Voucher lines">
+                        <field name="lines" nolabel="1">
+                            <tree string="Issue Petty Cash Voucher Lines" editable="bottom">
+                                <field name="wizard" invisible="1"/>
+                                <field name="expense_account" widget="selection"/>
+                                <field name="amount" widget="monetary"/>
+                                <field name="memo"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <button name="create_voucher" type="object" string="Create" class="oe_highlight"/>
+                    <button name="cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="create_pettycash_voucher" model="ir.actions.act_window">
+            <field name="name">Create Petty Cash Voucher</field>
+            <field name="res_model">account.pettycash.fund.voucher</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+    </data>
+</openerp>

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_petty_cash_manager,account.pettycash.fund access,account_petty_cash.model_account_pettycash_fund,account.group_account_manager,1,1,1,1
+access_account_petty_cash_accountant,account.pettycash.fund access,account_petty_cash.model_account_pettycash_fund,account.group_account_user,1,1,0,0
+access_account_petty_cash_owner,account.pettycash.fund access,account_petty_cash.model_account_pettycash_fund,account.group_pettycash_custodian,1,0,0,0
+access_account_voucher_owner,account.voucher petty cash custodian,account_voucher.model_account_voucher,account.group_pettycash_custodian,1,1,1,1
+access_account_voucher_line_owner,account.voucher.line petty cash custodian,account_voucher.model_account_voucher_line,account.group_pettycash_custodian,1,1,1,1
+access_account_journal_owner,account.journal petty cash custodian,account.model_account_journal,account.group_pettycash_custodian,1,0,0,0
+access_account_period_owner,account.period petty cash custodian,account.model_account_period,account.group_pettycash_custodian,1,0,0,0
+access_account_move_line_owner,account.move.line petty cash custodian,account.model_account_move_line,account.group_pettycash_custodian,1,0,0,0
+access_account_move_owner,account.move petty cash custodian,account.model_account_move,account.group_pettycash_custodian,1,0,0,0
