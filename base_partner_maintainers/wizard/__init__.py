@@ -19,4 +19,4 @@
 #
 #
 
-import maintainers
+from . import maintainers
