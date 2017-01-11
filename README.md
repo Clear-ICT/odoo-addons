@@ -4,13 +4,14 @@
 
 Odoo-addons
 
-Additional modules for Odoo published by Clear ICT Solutions.
+Additional modules for Odoo published by Sucros Clear Information Technologies PLC.
 
 [//]: # (addons)
 Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[account_petty_cash](account_petty_cash/) | 8.0.1.0 | Automated management of petty cash funds
 [base_group_hiddenmenu](base_group_hiddenmenu/) | 1.0 | User group for hiding menu items
 [base_partner_maintainers](base_partner_maintainers/) | 1.0 | Centrally manage maintainers of partner records.
 [content_cleanup](content_cleanup/) | 8.0 | Remove database content
