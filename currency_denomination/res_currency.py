@@ -4,8 +4,8 @@
 #    Copyright (C) 2014 Michael Telahun Makonnen <mmakonnen@gmail.com>.
 #    All Rights Reserved.
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
+#    This program is free software: you can redistribute it and/or modify it
+#    under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
@@ -37,7 +37,8 @@ class ResCurrencyDenomination(orm.Model):
         'ratio':
             fields.float(
                 'Ratio',
-                help="Ratio of this denomination to the smallest integral denomination."),
+                help="Ratio of this denomination to the smallest integral "
+                     "denomination."),
         'value':
             fields.float('Value', digits_compute=dp.get_precision('Account')),
     }
@@ -50,7 +51,8 @@ class ResCurrency(orm.Model):
     _inherit = 'res.currency'
 
     _columns = {
-        'denomination_ids': fields.one2many('res.currency.denomination', 'currency_id',
+        'denomination_ids': fields.one2many('res.currency.denomination',
+                                            'currency_id',
                                             'Denominations'),
     }
 

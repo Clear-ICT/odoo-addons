@@ -34,11 +34,12 @@ class SaleOrder(models.Model):
             partner = self.env['res.partner'].browse(vals['partner_id'])
             company = self.env['res.company']
 
-            if not partner.country_id or partner.country_id == company.country_id:
+            if not partner.country_id \
+                    or partner.country_id == company.country_id:
                 if not partner.vat:
-                    raise exceptions.Warning(_('Customer does not have a Tax ID '
-                                               'Number'),
-                                             ('You cannot make a sale to a '
-                                              'customer without a Tax ID Number.')
-                                             )
+                    raise exceptions.Warning(
+                            _('Customer does not have a Tax ID Number'),
+                            _('You cannot make a sale to a '
+                              'customer without a Tax ID Number.')
+                    )
         return super(SaleOrder, self).create(vals)

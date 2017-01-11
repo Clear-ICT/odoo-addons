@@ -86,9 +86,9 @@ class SaleOrderLine(models.Model):
         """Warn if the requested dates is sooner than the commitment date"""
 
         for line in self:
-            if (line.requested_date
-               and line.commitment_date
-               and line.requested_date < line.commitment_date):
+            if (line.requested_date and
+                    line.commitment_date and
+                    line.requested_date < line.commitment_date):
                 return {'warning': {
                     'title': _('Requested date is too soon!'),
                     'message': _("The date requested by the customer is "

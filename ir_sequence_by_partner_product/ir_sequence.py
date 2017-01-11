@@ -1,11 +1,11 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 #
 #
 #    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
 #    All Rights Reserved.
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
+#    This program is free software: you can redistribute it and/or modify it
+#    under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
@@ -36,10 +36,11 @@ class IrSequence(orm.Model):
     }
 
     def next_by_partner_product(
-            self, cr, uid, partner_id, product_id, sequence_code, context=None):
-        """ Draw an interpolated string using a sequence with the requested code
-            and associated with the specified partner and product.
-            If several sequences with the correct code are available to the user
+            self, cr, uid, partner_id, product_id, sequence_code,
+            context=None):
+        """ Draw an interpolated string using a sequence with the requested
+            code and associated with the specified partner and product. If
+            several sequences with the correct code are available to the user
             (multi-company cases), the one from the user's current company will
             be used.
 
