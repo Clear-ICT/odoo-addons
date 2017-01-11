@@ -32,9 +32,14 @@ class ResCurrencyDenomination(orm.Model):
     _description = 'Currency Denomination'
 
     _columns = {
-        'currency_id': fields.many2one('res.currency', 'Currency', required=True),
-        'ratio': fields.float('Ratio', help="Ratio of this denomination to the smallest integral denomination."),
-        'value': fields.float('Value', digits_compute=dp.get_precision('Account')),
+        'currency_id':
+            fields.many2one('res.currency', 'Currency', required=True),
+        'ratio':
+            fields.float(
+                'Ratio',
+                help="Ratio of this denomination to the smallest integral denomination."),
+        'value':
+            fields.float('Value', digits_compute=dp.get_precision('Account')),
     }
 
     _rec_name = 'value'
@@ -49,7 +54,8 @@ class ResCurrency(orm.Model):
                                             'Denominations'),
     }
 
-    def get_denominations_from_amount(self, cr, uid, currency_name, amount, context=None):
+    def get_denominations_from_amount(
+            self, cr, uid, currency_name, amount, context=None):
 
         # Get denominations for currency
         # Arrange in order from largest value to smallest.

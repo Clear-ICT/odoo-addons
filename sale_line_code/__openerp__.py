@@ -21,7 +21,8 @@
 
 {
     'name': 'Sales Order Line Reference Codes',
-    'summary': 'Add both internal and customer reference codes to sales line items',
+    'summary':
+        'Add both internal and customer reference codes to sales line items',
     'description': """
 Sales Order Line Reference Codes
 ================================

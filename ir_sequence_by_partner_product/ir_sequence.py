@@ -27,10 +27,16 @@ class IrSequence(orm.Model):
     _inherit = 'ir.sequence'
 
     _columns = {
-        'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', select=1),
+        'product_id':
+            fields.many2one(
+                'product.product',
+                'Product',
+                ondelete='cascade',
+                select=1),
     }
 
-    def next_by_partner_product(self, cr, uid, partner_id, product_id, sequence_code, context=None):
+    def next_by_partner_product(
+            self, cr, uid, partner_id, product_id, sequence_code, context=None):
         """ Draw an interpolated string using a sequence with the requested code
             and associated with the specified partner and product.
             If several sequences with the correct code are available to the user
