@@ -19,8 +19,6 @@
 #
 #
 
-from datetime import datetime
-
 from openerp import api, fields, models
 from openerp.addons.decimal_precision import decimal_precision as dp
 from openerp.tools.translate import _
