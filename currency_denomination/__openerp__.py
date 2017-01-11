@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2014 Michael Telahun Makonnen <mmakonnen@gmail.com>.
 #    All Rights Reserved.
@@ -17,13 +17,13 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 {
     'name': 'Currency Denominations',
     'category': 'Finance',
     'author': 'Sucros Clear Information Technologies PLC',
-    'website':'http://www.clearict.com',
+    'website': 'http://www.clearict.com',
     'version': '1.0',
     'description': """
 Currency Denominations
@@ -39,7 +39,7 @@ An extensible method for denoting the denominations of individual currencies.
     'update_xml': [
         'security/ir.model.access.csv',
         'res_currency_view.xml',
-     ],
+    ],
     'test': [
     ],
     'demo_xml': [],

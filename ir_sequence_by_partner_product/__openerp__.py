@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 {
     "name": "Sequence number by partner and product",
     "summary": "Implements sequence numbers per partner per product",
@@ -29,7 +29,7 @@ method is introduced on ir.sequence: get_next_by_partner_product(partner_id, pro
 To use it:
     1. Create a sequence type for the type of sequence(s) you want
     2. Create a sequence record for every partner/product combination you want to track
-    3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner_product(partner_id, product_id, sequence_type_code) 
+    3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner_product(partner_id, product_id, sequence_type_code)
     """,
     "author": "Sucros Clear Information Technologies PLC",
     "website": "http://clearict.com",

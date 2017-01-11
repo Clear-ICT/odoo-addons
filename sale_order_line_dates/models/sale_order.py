@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from datetime import datetime, timedelta
 
@@ -44,6 +44,7 @@ class SaleOrder(models.Model):
 
 
 class SaleOrderLine(models.Model):
+
     """Add several date fields to Sale Order Lines"""
 
     _inherit = 'sale.order.line'
@@ -93,7 +94,7 @@ class SaleOrderLine(models.Model):
                     'message': _("The date requested by the customer is "
                                  "sooner than the commitment date. You may be "
                                  "unable to honor the customer's request.")
-                    }
+                }
                 }
         return {}
 

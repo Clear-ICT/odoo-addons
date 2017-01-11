@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
 #    All Rights Reserved.
@@ -17,16 +17,17 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from openerp import fields, models
 
-class sale_order_line(models.Model):
-    
+
+class SaleOrderLine(models.Model):
+
     _inherit = 'sale.order.line'
-    
-    ## Fields
+
+    # Fields
     #
-    
+
     customer_ref = fields.Char('Client Ref. No.')
     order_line_ref = fields.Char('Line Ref. No.')

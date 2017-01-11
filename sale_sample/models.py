@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
 #    All Rights Reserved.
@@ -17,13 +17,13 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from openerp import api, fields, models
 from openerp.addons import decimal_precision as dp
 
 
-class res_partner(models.Model):
+class ResPartner(models.Model):
 
     _inherit = 'res.partner'
 
@@ -54,7 +54,7 @@ class res_partner(models.Model):
                                       string='# of Sales Order')
 
 
-class sale_order(models.Model):
+class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
@@ -79,10 +79,10 @@ class sale_order(models.Model):
             vals['name'] = parent.name + ref
             vals['user_id'] = parent.user_id.id
 
-        return super(sale_order, self).create(vals)
+        return super(SaleOrder, self).create(vals)
 
 
-class sample_order_wizard(models.TransientModel):
+class SampleOrderWizard(models.TransientModel):
 
     _name = 'sale.order.sample.wizard'
     _description = 'Sample Sale Order Wizard'
@@ -179,7 +179,7 @@ class sample_order_wizard(models.TransientModel):
         return {'type': 'ir.actions.act_window_close'}
 
 
-class sample_order_wizard_line(models.TransientModel):
+class SampleOrderWizardLine(models.TransientModel):
 
     _name = 'sale.order.sample.wizard.line'
     _description = 'Sample Order Wizard Line'

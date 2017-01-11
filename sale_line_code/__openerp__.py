@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 {
     'name': 'Sales Order Line Reference Codes',
@@ -29,8 +29,8 @@ Sales Order Line Reference Codes
     * Internal Company Reference Number
     * Customer Reference Number
     """,
-    'author':'Sucros Clear Information Technologies PLC',
-    'website':'http://clearict.com',
+    'author': 'Sucros Clear Information Technologies PLC',
+    'website': 'http://clearict.com',
     'category': 'Sales',
     'version': '1.0',
     'depends': [

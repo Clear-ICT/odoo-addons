@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 {
     'name': 'Partner Maintainers',
@@ -27,8 +27,8 @@ Centrally manage who can maintain partners and contacts
 =======================================================
 Give specific users permission to add, remove, and update contact information.
     """,
-    'author':'Sucros Clear Information Technologies PLC',
-    'website':'http://clearict.com',
+    'author': 'Sucros Clear Information Technologies PLC',
+    'website': 'http://clearict.com',
     'category': 'Generic Modules/Base',
     'version': '1.0',
     'depends': [

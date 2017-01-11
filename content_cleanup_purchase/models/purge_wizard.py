@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    OpenERP, Open Source Management Solution
 #    This module copyright (C) 2016 Clear ICT Solutions (<info@clearict.com>).
@@ -17,12 +17,13 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from openerp import api, models
 
 
 class PurgeWizard(models.TransientModel):
+
     """ Main wizard for cleaning up model content """
 
     _inherit = 'cleanup.content.wizard'

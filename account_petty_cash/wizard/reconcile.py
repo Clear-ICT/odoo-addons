@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (c) 2016 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from datetime import datetime
 
@@ -78,7 +78,7 @@ class IssueVoucherWizard(models.TransientModel):
 
                 # Do not process if voucher does not belong to this fund.
                 if not voucher.petty_cash_fund \
-                  or voucher.petty_cash_fund.id != wiz.fund.id:
+                        or voucher.petty_cash_fund.id != wiz.fund.id:
                     raise exceptions.ValidationError(
                         _("Voucher (%s) does not belong to this petty cash "
                           "fund." % (voucher.name)))

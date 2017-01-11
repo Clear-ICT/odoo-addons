@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 {
     'name': 'Vehicle Fuel Log Group by Date',
@@ -26,8 +26,8 @@
 Group Fuel Log Entries by Date
 ==============================
     """,
-    'author':'Sucros Clear Information Technologies PLC',
-    'website':'http://clearict.com',
+    'author': 'Sucros Clear Information Technologies PLC',
+    'website': 'http://clearict.com',
     'version': '1.0',
     'category': 'Generic Modules',
     'depends': [

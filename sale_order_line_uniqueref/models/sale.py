@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2016 Clear ICT Solutions <info@clearict.com>.
 #    All Rights Reserved.
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 import logging
 
@@ -57,7 +57,7 @@ class SaleLine(models.Model):
             ref = self.pool['ir.sequence'].\
                 next_by_code(
                     cr, SUPERUSER_ID, 'sale.order.line.unique.ref'
-                ) or '/'
+            ) or '/'
             query = "UPDATE sale_order_line \
                      SET unique_ref=%s      \
                      WHERE id=%s"

@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Clear ICT Solutions <info@clearict.com>.
 #    All Rights Reserved.
@@ -17,14 +17,15 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 from openerp.osv import fields, orm
 
-class ir_sequence(orm.Model):
-    
+
+class IrSequence(orm.Model):
+
     _inherit = 'ir.sequence'
-    
+
     _columns = {
         'product_id': fields.many2one('product.product', 'Product', ondelete='cascade', select=1),
     }
@@ -40,10 +41,11 @@ class ir_sequence(orm.Model):
                 ``force_company`` key with the ID of the company to
                 use instead of the user's current company for the
                 sequence selection. A matching sequence for that
-                specific company will get higher priority. 
+                specific company will get higher priority.
         """
         self.check_access_rights(cr, uid, 'read')
-        company_ids = self.pool.get('res.company').search(cr, uid, [], context=context) + [False]
+        company_ids = self.pool.get('res.company').search(
+            cr, uid, [], context=context) + [False]
         ids = self.search(cr, uid, [('partner_id', '=', partner_id),
                                     ('product_id', '=', product_id),
                                     '&', ('code', '=', sequence_code),

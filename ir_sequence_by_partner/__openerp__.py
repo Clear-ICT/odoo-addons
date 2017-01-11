@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-##############################################################################
+#
 #
 #    Copyright (C) 2015 Sucros Clear Information Technologies PLC.
 #    All Rights Reserved.
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 {
     "name": "Sequence number by partner",
     "summary": "Implements sequence numbers per partner",
@@ -31,7 +31,7 @@ To use it:
     2. Override the partner create() method to create a sequence record for
        the sequence type created in step 1.  *Note*: this means that if you create N sequence
        types you will create N sequences every time a new partner is created.
-    3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner(partner_id, sequence_type_code) 
+    3. To get the next sequence call self.env['ir.sequence'].get_next_by_partner(partner_id, sequence_type_code)
     """,
     "author": "Sucros Clear Information Technologies PLC",
     "website": "http://clearict.com",

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    OpenERP, Open Source Management Solution
 #    This module copyright (C) 2016 Clear ICT Solutions (<info@clearict.com>).
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 
 import logging
 import psycopg2
@@ -27,6 +27,7 @@ from openerp.tools.translate import _
 
 
 class PurgeWizardLineExtraTables(models.TransientModel):
+
     """ Additional database tables whose content should be removed """
 
     _name = 'cleanup.content.wizard.line.extra.tables'
@@ -38,6 +39,7 @@ class PurgeWizardLineExtraTables(models.TransientModel):
 
 
 class PurgeWizardLine(models.TransientModel):
+
     """ Invidual lines representing models to cleanup """
 
     _name = 'cleanup.content.wizard.line'
@@ -214,6 +216,7 @@ class PurgeWizardLine(models.TransientModel):
 
 
 class PurgeWizard(models.TransientModel):
+
     """ Main wizard for cleaning up model content """
 
     _name = 'cleanup.content.wizard'
