@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/Clear-ICT/odoo-addons.svg?branch=7.0)](https://travis-ci.org/Clear-ICT/odoo-addons)
-[![Coverage Status](https://coveralls.io/repos/Clear-ICT/odoo-addons/badge.svg?branch=7.0&service=github)](https://coveralls.io/github/Clear-ICT/odoo-addons?branch=7.0)
+[![Build Status](https://travis-ci.org/Clear-ICT/odoo-addons.svg?branch=8.0)](https://travis-ci.org/Clear-ICT/odoo-addons)
+[![Coverage Status](https://coveralls.io/repos/Clear-ICT/odoo-addons/badge.svg?branch=8.0&service=github)](https://coveralls.io/github/Clear-ICT/odoo-addons?branch=8.0)
 [![Code Climate](https://codeclimate.com/github/Clear-ICT/odoo-addons/badges/gpa.svg)](https://codeclimate.com/github/Clear-ICT/odoo-addons)
 
 Odoo-addons
